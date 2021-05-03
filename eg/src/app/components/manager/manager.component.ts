@@ -1270,7 +1270,6 @@ export class ManagerComponent implements OnInit {
 		if(localStorage.getItem("consulta") == "paises") {
 			
 			// Obtener Cuerpo
-			// Obtener Cuerpo
 			let BodyJson = this.datos[Codigo];
 			
 			// Cambiar Region 			 
@@ -1294,7 +1293,7 @@ export class ManagerComponent implements OnInit {
 			if(Value == "si") {
 				
 				// Llamar AL Servicio 
-				this.proyecto2Service.DeletePais(BodyJson["id"]).subscribe(				
+				this.proyecto2Service.DeletePais(BodyJson["id"].trim(' ')).subscribe(				
 				
 					// Resultado 
 					Result => {
@@ -1461,7 +1460,7 @@ export class ManagerComponent implements OnInit {
 			if(Value == "si") {
 				
 				// Llamar AL Servicio 
-				this.proyecto2Service.DeletePregunta(BodyJson["id"]).subscribe(				
+				this.proyecto2Service.DeletePregunta(BodyJson["id"].trim(' ')).subscribe(				
 				
 					// Resultado 
 					Result => {

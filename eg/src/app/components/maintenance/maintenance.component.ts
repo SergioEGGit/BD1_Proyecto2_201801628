@@ -186,12 +186,12 @@ export class MaintenanceComponent implements OnInit {
 						  {
 							title: 'Invento',
 							text: 'Ingrese Un Nombre',
-							inputValue: (ArrayInvento[0])["nombre_in"]							
+							inputValue: (ArrayInvento[0])["Nombre_IN"]							
 						  },
 						  {
 							title: 'Año',
 							text: 'Ingrese El Año De Invención',
-							inputValue: (ArrayInvento[0])["anio_in"]
+							inputValue: (ArrayInvento[0])["Anio_IN"]
 						  }
 						]).then((result) => {
 							
@@ -211,7 +211,7 @@ export class MaintenanceComponent implements OnInit {
 					
 					let BodyJson_1 = {
 						
-						Id_PA_IN: (ArrayInvento[0])["id_pa_in"],
+						Id_PA_IN: (ArrayInvento[0])["Id_PA_IN"],
 						Nombre_IN: (this.ArrayAgregar["value"])[0],
 						Anio_IN: (this.ArrayAgregar["value"])[1]
 						
@@ -219,13 +219,13 @@ export class MaintenanceComponent implements OnInit {
 				
 					let BodyJson_2 = {
 						
-						Id_IN_IT: (ArrayInvento[0])["id_in"],
+						Id_IN_IT: (ArrayInvento[0])["Id_IN"],
 						Id_IV_IT: (Result[0])["id"]
 						
 					}
 				
 					// Agregar Cambio A Invento 
-					this.proyecto2Service.PutInvento((ArrayInvento[0])["id_in"], BodyJson_1).subscribe(
+					this.proyecto2Service.PutInvento((ArrayInvento[0])["Id_IN"], BodyJson_1).subscribe(
 							
 						Result => {
 							
