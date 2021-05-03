@@ -919,7 +919,7 @@ const router = app => {
 	app.delete("/proyecto2/paises/eliminar/:id", (request, response) => {
 		
 		// query 
-		let query = "delete from pais where id_pa = ?";
+		let query = "SET foreign_key_checks = 0; delete from pais where id_pa = ? SET foreign_key_checks = 1;";
 		
 		// peticion de query 
 		poolconnection.query(query, request.params.id, (error, resultado) => {
@@ -1059,7 +1059,7 @@ const router = app => {
 	app.delete("/proyecto2/fronteras/eliminar/:id", (request, response) => {
 		
 		// query 
-		let query = "delete from frontera where id_fr = ?";
+		let query = "SET foreign_key_checks = 0; delete from frontera where id_fr = ? SET foreign_key_checks = 1;";
 		
 		// peticion de query 
 		poolconnection.query(query, request.params.id, (error, resultado) => {
@@ -1227,7 +1227,7 @@ const router = app => {
 	app.delete("/proyecto2/preguntas/eliminar/:id", (request, response) => {
 		
 		// query 
-		let query = "delete from pregunta where id_pg = ?";
+		let query = "SET foreign_key_checks = 0; delete from pregunta where id_pg = ? SET foreign_key_checks = 1;";
 		
 		// peticion de query 
 		poolconnection.query(query, request.params.id, (error, resultado) => {

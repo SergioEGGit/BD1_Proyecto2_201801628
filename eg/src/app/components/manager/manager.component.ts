@@ -1291,9 +1291,9 @@ export class ManagerComponent implements OnInit {
 			});
 
 			if(Value == "si") {
-				console.log(BodyJson);
+			
 				// Llamar AL Servicio 
-				this.proyecto2Service.DeletePais(BodyJson["id"].trim(' ')).subscribe(				
+				this.proyecto2Service.DeletePais(BodyJson["id"]).subscribe(				
 				
 					// Resultado 
 					Result => {
@@ -1458,9 +1458,9 @@ export class ManagerComponent implements OnInit {
 			});
 
 			if(Value == "si") {
-				console.log(BodyJson);
+			
 				// Llamar AL Servicio 
-				this.proyecto2Service.DeletePregunta(BodyJson["id"].trim(' ')).subscribe(				
+				this.proyecto2Service.DeletePregunta(BodyJson["id"]).subscribe(				
 				
 					// Resultado 
 					Result => {
