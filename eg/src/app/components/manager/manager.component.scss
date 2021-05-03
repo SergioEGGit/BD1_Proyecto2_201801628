@@ -1,0 +1,57 @@
+.container {
+  background-color: cornflowerblue;
+  background-image: url('../../../assets/fondo.png');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  box-shadow: -1px 3px 66px 0px rgba(0,0,0,0.75);
+}
+
+mat-card {
+  align-items: center;
+  justify-content: center;
+  background-color:wheat;
+  width: 90%;
+  text-align: center;
+}
+
+table {
+  width: 90%;
+  margin:1rem auto;
+}
+
+.contenedor {
+  aling-items: center;
+  display: flex;
+  flex-direction: column;
+  margin:1rem auto;
+  max-width: 800px;
+  box-shadow: -1px 3px 66px 0px rgba(0,0,0,0.75);
+  padding: 1rem;
+}
+
+.cont {
+	
+	aling-items: center;
+	text-align: center;
+	
+}
+
+mat-card-header {
+
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 22px;
+  padding: 15px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+

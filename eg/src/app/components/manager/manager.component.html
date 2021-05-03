@@ -1,0 +1,47 @@
+<seg-navbar></seg-navbar>
+
+<div class="container" >
+
+      <mat-card >  
+	  
+		<mat-card-header>		
+			<img class="avatar" src="assets/roles.jpg" alt="...">
+			<strong> Administración </strong>		
+		</mat-card-header>	
+		<mat-card-header>	
+			<button mat-raised-button color="primary" (click)="agregar()">Agregar</button>
+		</mat-card-header >		
+	
+		<mat-divider></mat-divider>	
+        <table mat-table [dataSource]="datos" class="mat-elevation-z8" #tabla1>
+
+          
+          <ng-container *ngFor="let disCol of columnas let colIndex = index" matColumnDef="{{disCol}}"> dfdfdfd
+            <th class="cont" mat-header-cell *matHeaderCellDef> <strong>{{disCol}}</strong> </th>
+            <td mat-cell *matCellDef="let articulo"> {{articulo[disCol]}} </td>			
+		  </ng-container>		  
+		  		  
+		  <ng-container matColumnDef="Modificar"> 
+            <th mat-header-cell *matHeaderCellDef><strong>Modificar?</strong> </th>
+            <td mat-cell *matCellDef="let j = index;">
+              <button mat-mini-fab color="primary" focusable="false" (click)="modificar(j)">
+               <mat-icon>edit</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Borrar">
+            <th mat-header-cell *matHeaderCellDef><strong>Eliminar?</strong> </th>
+            <td mat-cell *matCellDef="let j = index;">
+              <button mat-mini-fab color="warn" focusable="false" (click)="eliminar(j)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="headers"></tr>
+          <tr mat-row *matRowDef="let row; columns: headers;"></tr>
+        </table>
+       
+      </mat-card>
+</div>

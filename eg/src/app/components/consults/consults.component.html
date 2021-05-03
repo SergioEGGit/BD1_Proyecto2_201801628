@@ -1,0 +1,38 @@
+<seg-navbar></seg-navbar>
+<div class="container3" >
+  <mat-card >
+
+    <mat-card-header>
+      <img class="avatar" src="assets/roles.jpg" alt="...">
+      <strong>Consultas   </strong>
+	</mat-card-header>	
+	<mat-card-header>	
+		<button mat-raised-button class ="regresar" color="primary" routerLink = '/home' >Regresar</button>
+	</mat-card-header >		
+	<mat-divider></mat-divider>	
+    <br/>	
+    <mat-card-content>
+      <div class="example-container mat-elevation-z8">
+        <mat-table #table [dataSource]="dataSource">
+
+          <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+          <!-- Position Column -->
+          <ng-container *ngFor="let disCol of displayedColumns; let colIndex = index" matColumnDef="{{disCol}}">
+            <mat-header-cell class = "cont" *matHeaderCellDef> <strong>{{disCol}}</strong> </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element[disCol]}} </mat-cell>
+          </ng-container>
+
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </div>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <br/>
+	<button mat-raised-button color="primary" routerLink = '/home' >Regresar</button>
+  </mat-card>
+</div>
+

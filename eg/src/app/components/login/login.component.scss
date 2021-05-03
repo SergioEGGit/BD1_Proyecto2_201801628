@@ -1,0 +1,54 @@
+.container {
+  background-color: #0099ff;
+  background-image: url('../../../assets/fondo-left.png');
+  background-size: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+}
+
+mat-card {
+  align-items: center;
+  justify-content: center;
+  background-color:wheat;
+  width: 50%;
+  text-align: center;
+}
+
+mat-card-header {
+
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 22px;
+
+  padding: 15px;
+
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.imagen {
+  padding-top: 16px;
+  width: 300px;
+  height: 450px;
+}
+
+.example-form {
+
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.example-half-width {
+  width: 50%
+}

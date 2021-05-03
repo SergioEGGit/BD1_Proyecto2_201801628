@@ -1,0 +1,46 @@
+<div class="container1" >
+  <mat-card >
+
+    <mat-card-header>
+      <img class="avatar" src="assets/profile.jpg" alt="...">
+      <strong>Perfil del usuario</strong>
+    </mat-card-header>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-content>
+      <br/>
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <label for="email"></label>
+          <input type="email" matInput placeholder="Correo electrónico"  id="email">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <label for="dpi"></label>
+          <input type="text" matInput placeholder="DPI"  id="dpi">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <label for="name"></label>
+          <input type="text" matInput placeholder="Nombre completo"  id="name">
+        </mat-form-field>
+        <mat-form-field class="example-half-width">
+          <label for="password"></label>
+          <mat-icon matSuffix>https</mat-icon>
+          <input type="password" matInput placeholder="Contraseña"  id="password">
+        </mat-form-field>
+        <mat-form-field class="example-half-width">
+          <label for="repassword"></label>
+          <mat-icon matSuffix>https</mat-icon>
+          <input type="password" matInput placeholder="Repetir contraseña"  id="repassword">
+        </mat-form-field>
+        <button mat-raised-button color="primary" routerLink = '/rol'>Roles</button>
+        &nbsp;
+        <button mat-raised-button color="primary" routerLink = '/priviliges'>Permisos</button>
+        &nbsp;
+        <button mat-raised-button color="primary" >Modificar</button>
+      </form>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+  </mat-card>
+</div>
+

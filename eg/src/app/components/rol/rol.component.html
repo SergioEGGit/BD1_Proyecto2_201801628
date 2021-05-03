@@ -1,0 +1,41 @@
+<div class="container3" >
+  <mat-card >
+
+    <mat-card-header>
+      <img class="avatar" src="assets/roles.jpg" alt="...">
+      <strong>Roles</strong>
+    </mat-card-header>
+
+    <mat-divider></mat-divider>
+    <br/>
+    <mat-card-content>
+      <div class="example-container mat-elevation-z8">
+        <mat-table #table [dataSource]="dataSource">
+
+          <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="no">
+            <mat-header-cell *matHeaderCellDef> <strong>No.</strong> </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.no}} </mat-cell>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="rol">
+            <mat-header-cell *matHeaderCellDef> <strong>Rol</strong>  </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.rol}} </mat-cell>
+          </ng-container>
+
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </div>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <br/>
+    <button mat-raised-button color="primary" routerLink = '/profile' >Regresar</button>
+  </mat-card>
+</div>
+

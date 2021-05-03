@@ -1,0 +1,57 @@
+<mat-toolbar class="bar">
+  <button mat-icon-button (click)="redireccionar('/home', '')">
+    <mat-icon style="color:#0099ff;">home</mat-icon>
+  </button>
+    <div class="left tittle">EG Guatemala</div>
+    <div class="center">
+      <img class="imagen" src="assets/logo3.png" alt="...">
+   </div>
+   <div class="right">
+     <button mat-icon-button aria-label="Example icon-button with menu icon" [matMenuTriggerFor]="menu">
+          <mat-icon>menu</mat-icon>
+     </button>
+   </div>
+</mat-toolbar >
+
+<mat-menu class="menu" #menu="matMenu" >
+  <button mat-menu-item (click)="redireccionar('/login', '')"> <mat-icon>exit_to_app</mat-icon> Cerrar sesión</button>
+  <mat-divider></mat-divider>
+  <button mat-menu-item [matMenuTriggerFor]="consultas"> <mat-icon>import_contacts</mat-icon> Ver Consultas</button>
+  <mat-divider></mat-divider>
+  <button mat-menu-item [matMenuTriggerFor]="crud"> <mat-icon>book</mat-icon> Administración</button>
+  <button mat-menu-item [matMenuTriggerFor]="mant"> <mat-icon>settings</mat-icon> Mantenimiento</button>
+</mat-menu>
+
+<mat-menu #consultas="matMenu">
+  <button mat-menu-item (click)="redireccionar('/consultas', 'consulta1')"><mat-icon>filter_1</mat-icon>Consulta No.1</button>
+  <button mat-menu-item (click)="redireccionar('/consultas', 'consulta2')"><mat-icon>filter_2</mat-icon>Consulta No.2</button>
+  <button mat-menu-item (click)="redireccionar('/consultas', 'consulta3')"><mat-icon>filter_3</mat-icon>Consulta No.3</button>
+  <button mat-menu-item (click)="redireccionar('/consultas', 'consulta4')"><mat-icon>filter_4</mat-icon>Consulta No.4</button>
+  <button mat-menu-item (click)="redireccionar('/consultas', 'consulta5')"><mat-icon>filter_5</mat-icon>Consulta No.5</button>
+  <button mat-menu-item (click)="redireccionar('/consultas', 'consulta6')"><mat-icon>filter_6</mat-icon>Consulta No.6</button>
+  <button mat-menu-item (click)="redireccionar('/consultas', 'consulta7')"><mat-icon>filter_7</mat-icon>Consulta No.7</button>
+  <button mat-menu-item (click)="redireccionar('/consultas', 'consulta8')"><mat-icon>filter_8</mat-icon>Consulta No.8</button>
+  <button mat-menu-item (click)="redireccionar('/consultas', 'consulta9')"><mat-icon>filter_9</mat-icon>Consulta No.9</button>
+  <button mat-menu-item (click)="redireccionar('/consultas', 'consulta10')"><mat-icon>filter_9_plus</mat-icon>Consulta No.10</button>
+  <button mat-menu-item (click)="redireccionar('/consultas', 'consulta11')"><mat-icon>filter_9_plus</mat-icon>Consulta No.11</button>
+  <button mat-menu-item (click)="redireccionar('/consultas', 'consulta12')"><mat-icon>filter_9_plus</mat-icon>Consulta No.12</button>
+  <button mat-menu-item (click)="redireccionar('/consultas', 'consulta13')"><mat-icon>filter_9_plus</mat-icon>Consulta No.13</button>
+  <button mat-menu-item (click)="redireccionar('/consultas', 'consulta14')"><mat-icon>filter_9_plus</mat-icon>Consulta No.14</button>
+  <button mat-menu-item (click)="redireccionar('/consultas', 'consulta15')"><mat-icon>filter_9_plus</mat-icon>Consulta No.15</button>
+  <button mat-menu-item (click)="redireccionar('/consultas', 'consulta16')"><mat-icon>filter_9_plus</mat-icon>Consulta No.16</button>
+  <button mat-menu-item (click)="redireccionar('/consultas', 'consulta17')"><mat-icon>filter_9_plus</mat-icon>Consulta No.17</button>
+  <button mat-menu-item (click)="redireccionar('/consultas', 'consulta18')"><mat-icon>filter_9_plus</mat-icon>Consulta No.18</button>
+  <button mat-menu-item (click)="redireccionar('/consultas', 'consulta19')"><mat-icon>filter_9_plus</mat-icon>Consulta No.19</button>
+  <button mat-menu-item (click)="redireccionar('/consultas', 'consulta20')"><mat-icon>filter_9_plus</mat-icon>Consulta No.20</button>
+</mat-menu>
+
+<mat-menu #crud="matMenu">
+  <button mat-menu-item (click)="redireccionar('/manager', 'paises')"><mat-icon>flight_takeoff</mat-icon>Paises</button>
+  <button mat-menu-item (click)="redireccionar('/manager', 'fronteras')"><mat-icon>my_location</mat-icon>Fronteras</button>
+  <button mat-menu-item (click)="redireccionar('/manager', 'preguntas')"><mat-icon>question_answer</mat-icon>Preguntas</button>
+</mat-menu>
+
+<mat-menu #mant="matMenu">
+  <button mat-menu-item (click)="redireccionar('/maintenance', 'inventado')"><mat-icon>highlight</mat-icon>Inventos</button>
+  <button mat-menu-item (click)="redireccionar('/maintenance', 'correctas')"><mat-icon> done_outline</mat-icon>Respuestas Correctas</button>
+</mat-menu>

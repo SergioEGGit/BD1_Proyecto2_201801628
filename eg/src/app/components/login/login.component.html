@@ -1,0 +1,33 @@
+<seg-navbar-general></seg-navbar-general>
+<div class="container" >
+  <mat-card >
+
+        <mat-card-header>
+          <img class="avatar" src="assets/avatar.jpg" alt="...">
+          <strong>Inicio de sesión </strong>
+       </mat-card-header>
+
+       <mat-divider></mat-divider>
+
+       <mat-card-content>
+         <form class="example-form">
+           <br/>
+           <mat-form-field class="example-full-width">
+             <label for="email"></label>
+             <mat-icon matSuffix>account_circle</mat-icon>
+             <input [(ngModel)] = "Usuario" name="user" type="text" matInput placeholder="Usuario"  id="email">
+           </mat-form-field>
+           <mat-form-field class="example-full-width">
+             <label for="password"></label>
+             <mat-icon matSuffix>https</mat-icon>
+             <input [(ngModel)] = "Pass" name="pass" type="password" matInput placeholder="Contraseña"  id="password">
+           </mat-form-field>
+           <button mat-raised-button color="primary" (click)="ingreso()" >Ingresar</button>
+         </form>
+      </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-actions>
+      <button mat-button (click)="mensaje()">Olvide mi contraseña</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
