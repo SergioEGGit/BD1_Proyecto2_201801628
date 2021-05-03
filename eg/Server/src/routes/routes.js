@@ -50,7 +50,7 @@ const router = app => {
 	app.get("/proyecto2/consulta2", (request, response) => {
 		
 		// query 
-		let query = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY','')); select (select nombre_re from region where id_re = sub1.continente) as continente, sub1.pais, sub1.numero_de_preguntas from ( " +
+		let query = "select (select nombre_re from region where id_re = sub1.continente) as continente, sub1.pais, sub1.numero_de_preguntas from ( " +
 					" " +
 					"	select if(isnull(region.id_re_re) = 1, region.id_re, region.id_re_re) as continente, nombre_pa as pais, count(id_rs_dpr) as numero_de_preguntas from pais " +
 					"	left join region on id_re = id_re_pa " +
@@ -59,7 +59,7 @@ const router = app => {
 					" " + 
 					") as sub1 " +
 					"order by sub1.numero_de_preguntas desc;";
-		
+		poolconnection.query("SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));");
 		// peticion de query 
 		poolconnection.query(query, (error, resultado) => {
 			
