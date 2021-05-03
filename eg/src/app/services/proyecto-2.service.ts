@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class Proyecto2Service {
 	
 	// Ruta Server 
-	ConsultaURL = 'http://localhost:9998/proyecto2';
+	ConsultaURL = 'http://35.223.46.120:9998/proyecto2';
 	
 	// Consturctor 
 	constructor(private clientHttp: HttpClient) { }
