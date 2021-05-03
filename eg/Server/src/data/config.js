@@ -8,6 +8,7 @@ const Config = {
 	user: 'root',
 	password: 'Intercan3',
 	database: 'Proyecto_2',
+	multipleStatements: true,
 	
 };
 

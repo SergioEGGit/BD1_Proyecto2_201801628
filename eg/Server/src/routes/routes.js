@@ -17,7 +17,7 @@ const router = app => {
 	app.get("/proyecto2/consulta1", (request, response) => {
 		
 		// query 
-		let query = "SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY,',''); select profesional.nombre_pr as profesional, count(invento.nombre_in) as numero_inventos from asigna_invento " +
+		let query = "set sql_mode = (SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY,','')); select profesional.nombre_pr as profesional, count(invento.nombre_in) as numero_inventos from asigna_invento " +
 					"left join profesional on id_pr = id_pr_ai " +
 					"left join invento on id_in = id_in_ai " +
 					"group by profesional.nombre_pr " +
@@ -60,7 +60,7 @@ const router = app => {
 					"order by sub1.numero_de_preguntas desc;";
 		
 		// peticion de query 
-		poolconnection.query("set sql_mode = (SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY,',''));", (error, resultado) => {
+		poolconnection.query(query, (error, resultado) => {
 			
 			// verificar si hay error 
 			if(error) {
@@ -72,27 +72,8 @@ const router = app => {
 			else 
 			{
 				
-				poolconnection.query(query, (error, resultado) => {
-			
-					// verificar si hay error 
-					if(error) {
-						
-						// retornar el error 
-						response.send(error);;
-						
-					}
-					else 
-					{
-						
-					
-						
-						// enviar resultado
-						response.send(resultado);
-						
-					}
-					
-				});
-		
+				// enviar resultado
+				response.send(resultado);
 				
 			}
 			
