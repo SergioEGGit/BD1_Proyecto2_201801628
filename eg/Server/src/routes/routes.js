@@ -17,12 +17,13 @@ const router = app => {
 	app.get("/proyecto2/consulta1", (request, response) => {
 		
 		// query 
-		let query = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY','')); select profesional.nombre_pr as profesional, count(invento.nombre_in) as numero_inventos from asigna_invento " +
+		let query = "select profesional.nombre_pr as profesional, count(invento.nombre_in) as numero_inventos from asigna_invento " +
 					"left join profesional on id_pr = id_pr_ai " +
 					"left join invento on id_in = id_in_ai " +
 					"group by profesional.nombre_pr " +
 					"order by numero_inventos desc;";
 		
+		poolconnection.query("SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));");
 		// peticion de query 
 		poolconnection.query(query, (error, resultado) => {
 			
