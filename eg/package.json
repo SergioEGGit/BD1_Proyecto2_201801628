@@ -7,7 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
 	"app-main": "ng serve --host 0.0.0.0 --port 4201 && node ./Server/src/index.js"
   },
   "private": true,
