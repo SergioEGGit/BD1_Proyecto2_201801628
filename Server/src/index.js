@@ -7,7 +7,7 @@ const Routes = require('./routes/routes');
 const Application = Express();
 
 // Uses App 
-Application.use(Cors());
+Application.use(Cors({origin: 'https://sergioeggit.github.io/EG_Web/'}));
 Application.use(bodyParser.json());
 Application.use(bodyParser.urlencoded({
 	
