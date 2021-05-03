@@ -90,7 +90,7 @@ export class ManagerComponent implements OnInit {
 				
 				for(let i = 0; i < Object.keys(Result).length; i++) {
 					
-					this.ArrayRegiones.push(Result[i]["Region"]);					
+					this.ArrayRegiones.push(Result[i]["region"]);					
 					
 				}
 				
@@ -110,7 +110,7 @@ export class ManagerComponent implements OnInit {
 				
 				for(let i = 0; i < Object.keys(Result).length; i++) {
 					
-					this.ArrayPaises.push(Result[i]["Pais"]);					
+					this.ArrayPaises.push(Result[i]["pais"]);					
 					
 				}
 				
@@ -130,7 +130,7 @@ export class ManagerComponent implements OnInit {
 				
 				for(let i = 0; i < Object.keys(Result).length; i++) {
 					
-					this.ArrayEncuestas.push(Result[i]["Encuesta"]);					
+					this.ArrayEncuestas.push(Result[i]["encuesta"]);					
 					
 				}
 				
@@ -227,7 +227,7 @@ export class ManagerComponent implements OnInit {
 							
 							BodyJson = {  
 
-								Id_RE_PA: (Result[0])["Id"],
+								Id_RE_PA: (Result[0])["id"],
 								Nombre_PA: (this.ArrayAgregar["value"])[0],
 								Poblacion_PA: (this.ArrayAgregar["value"])[1],
 								Area_PA: (this.ArrayAgregar["value"])[2],
@@ -383,7 +383,7 @@ export class ManagerComponent implements OnInit {
 							
 								Result => {
 									
-									this.Pais_1_Index = (Result[0])["Id"];
+									this.Pais_1_Index = (Result[0])["id"];
 
 									if(Pais_2.value == "")
 									{
@@ -405,7 +405,7 @@ export class ManagerComponent implements OnInit {
 											if(Result[0] != null)
 											{
 												
-												this.Pais_2_Index = (Result[0])["Id"];	
+												this.Pais_2_Index = (Result[0])["id"];	
 												
 											}
 											else 
@@ -571,7 +571,7 @@ export class ManagerComponent implements OnInit {
 							
 							BodyJson = {  
 
-								Id_EN_PG: (Result[0])["Id"],
+								Id_EN_PG: (Result[0])["id"],
 								Pregunta_PG: (this.ArrayAgregar["value"])[0]
 
 							};
@@ -656,22 +656,22 @@ export class ManagerComponent implements OnInit {
 						  {
 							title: 'País',
 							text: 'Ingrese Un Nombre',
-							inputValue: BodyJson["Pais"]
+							inputValue: BodyJson["pais"]
 						  },
 						  {
 							title: 'Población',
 							text: 'Ingrese La Cantidad',
-							inputValue: BodyJson["Poblacion"]
+							inputValue: BodyJson["poblacion"]
 						  },
 						  {
 							title: 'Area',
 							text: 'Ingrese El Area En Km2',
-							inputValue: BodyJson["Area"]
+							inputValue: BodyJson["area"]
 						  },
 						  {
 							title: 'Capital',
 							text: 'Ingrese La Capital',
-							inputValue: BodyJson["Capital"]
+							inputValue: BodyJson["capital"]
 						  }
 						]).then((result) => {
 							
@@ -686,7 +686,7 @@ export class ManagerComponent implements OnInit {
 			// Cambiar Region 			 
 			const Value = await Swal.fire({
 			  title: 'Desea Cambiar La Region?',
-			  text: BodyJson["Region"],
+			  text: BodyJson["region"],
 			  icon: 'question',
 			  showCancelButton: true,
 			  confirmButtonColor: '#3085d6',
@@ -709,7 +709,7 @@ export class ManagerComponent implements OnInit {
 				Region = await Swal.fire({
 					title: 'Seleccione Una Región',
 					input: 'select',
-					inputValue: BodyJson["Region"],
+					inputValue: BodyJson["region"],
 					inputOptions: {
 						'Regiones': this.ArrayRegiones
 					},				
@@ -724,7 +724,7 @@ export class ManagerComponent implements OnInit {
 				for(var Key in this.ArrayRegiones) {
 					
 					// Verificar 
-					if(this.ArrayRegiones[Key] == BodyJson["Region"]) {
+					if(this.ArrayRegiones[Key] == BodyJson["region"]) {
 						
 						Region = { value: Key };
 						
@@ -764,7 +764,7 @@ export class ManagerComponent implements OnInit {
 							
 							BodyJson_1 = {  
 
-								Id_RE_PA: (Result[0])["Id"],
+								Id_RE_PA: (Result[0])["id"],
 								Nombre_PA: (this.ArrayAgregar["value"])[0],
 								Poblacion_PA: (this.ArrayAgregar["value"])[1],
 								Area_PA: (this.ArrayAgregar["value"])[2],
@@ -773,7 +773,7 @@ export class ManagerComponent implements OnInit {
 							};
 						
 							// Modificar 
-							this.proyecto2Service.PutPais(BodyJson["Id"], BodyJson_1).subscribe(
+							this.proyecto2Service.PutPais(BodyJson["id"], BodyJson_1).subscribe(
 							
 								Result => {
 									
@@ -844,22 +844,22 @@ export class ManagerComponent implements OnInit {
 						  {
 							title: 'Frontera Por El Norte',
 							text: 'Ingrese Si/No',
-							inputValue: BodyJson["Norte"]							
+							inputValue: BodyJson["norte"]							
 						  },
 						  {
 							title: 'Frontera Por El Sur',
 							text: 'Ingrese Si/No',
-							inputValue: BodyJson["Sur"]
+							inputValue: BodyJson["sur"]
 						  },
 						  {
 							title: 'Frontera Por El Este',
 							text: 'Ingrese Si/No',
-							inputValue: BodyJson["Este"]
+							inputValue: BodyJson["este"]
 						  },
 						  {
 							title: 'Frontera Por El Oeste',
 							text: 'Ingrese Si/No',
-							inputValue: BodyJson["Oeste"]
+							inputValue: BodyJson["oeste"]
 						  }
 						]).then((result) => {
 							
@@ -873,7 +873,7 @@ export class ManagerComponent implements OnInit {
 			// Cambiar Region 			 
 			const Value = await Swal.fire({
 			  title: 'Desea Cambiar El Pais?',
-			  text: BodyJson["Pais"],
+			  text: BodyJson["pais"],
 			  icon: 'question',
 			  showCancelButton: true,
 			  confirmButtonColor: '#3085d6',
@@ -912,7 +912,7 @@ export class ManagerComponent implements OnInit {
 				for(var Key in this.ArrayPaises) {
 					
 					// Verificar 
-					if(this.ArrayPaises[Key] == BodyJson["Pais"]) {
+					if(this.ArrayPaises[Key] == BodyJson["pais"]) {
 						
 						Pais_1 = { value: Key };
 						
@@ -925,7 +925,7 @@ export class ManagerComponent implements OnInit {
 			// Cambiar Region 			 
 			const Value_2 = await Swal.fire({
 			  title: 'Desea Cambiar La Frontera?',
-			  text: BodyJson["Frontera"],
+			  text: BodyJson["frontera"],
 			  icon: 'question',
 			  showCancelButton: true,
 			  confirmButtonColor: '#3085d6',
@@ -964,7 +964,7 @@ export class ManagerComponent implements OnInit {
 				for(var Key in this.ArrayPaises) {
 					
 					// Verificar 
-					if(this.ArrayPaises[Key] == BodyJson["Frontera"]) {
+					if(this.ArrayPaises[Key] == BodyJson["frontera"]) {
 						
 						Pais_2 = { value: Key };
 						
@@ -981,7 +981,7 @@ export class ManagerComponent implements OnInit {
 							
 				Result => {
 					
-					this.Pais_1_Index = (Result[0])["Id"];
+					this.Pais_1_Index = (Result[0])["id"];
 
 					if(Pais_2.value == "")
 					{
@@ -1003,7 +1003,7 @@ export class ManagerComponent implements OnInit {
 							if(Result[0] != null)
 							{
 								
-								this.Pais_2_Index = (Result[0])["Id"];	
+								this.Pais_2_Index = (Result[0])["id"];	
 								
 							}
 							else 
@@ -1025,7 +1025,7 @@ export class ManagerComponent implements OnInit {
 							}
 							
 							// Modificar 
-							this.proyecto2Service.PutFrontera(BodyJson["Id"], BodyAgregar).subscribe(
+							this.proyecto2Service.PutFrontera(BodyJson["id"], BodyAgregar).subscribe(
 							
 								Result => {
 									
@@ -1103,7 +1103,7 @@ export class ManagerComponent implements OnInit {
 						  {
 							title: 'Pregunta',
 							text: 'Ingrese Una Pregunta ¿?',							
-							inputValue: BodyJson["Pregunta"]
+							inputValue: BodyJson["pregunta"]
 						  }
 						]).then((result) => {
 							
@@ -1117,7 +1117,7 @@ export class ManagerComponent implements OnInit {
 			// Cambiar Region 			 
 			const Value = await Swal.fire({
 			  title: 'Desea Cambiar La Encuesta?',
-			  text: BodyJson["Encuesta"],
+			  text: BodyJson["encuesta"],
 			  icon: 'question',
 			  showCancelButton: true,
 			  confirmButtonColor: '#3085d6',
@@ -1154,7 +1154,7 @@ export class ManagerComponent implements OnInit {
 				for(var Key in this.ArrayEncuestas) {
 					
 					// Verificar 
-					if(this.ArrayEncuestas[Key] == BodyJson["Encuesta"]) {
+					if(this.ArrayEncuestas[Key] == BodyJson["encuesta"]) {
 						
 						Encuesta = { value: Key };
 						
@@ -1193,12 +1193,12 @@ export class ManagerComponent implements OnInit {
 							
 							BodyJson_1 = {  
 
-								Id_EN_PG: (Result[0])["Id"],
+								Id_EN_PG: (Result[0])["id"],
 								Pregunta_PG: (this.ArrayAgregar["value"])[0]
 
 							};
 						
-							this.proyecto2Service.PutPregunta(BodyJson["Id"], BodyJson_1).subscribe(
+							this.proyecto2Service.PutPregunta(BodyJson["id"], BodyJson_1).subscribe(
 							
 							
 								Result => {
@@ -1276,7 +1276,7 @@ export class ManagerComponent implements OnInit {
 			// Cambiar Region 			 
 			const Value = await Swal.fire({
 			  title: 'Esta Seguro Que Desea Eliminar El Pais?',
-			  text: BodyJson["Pais"],
+			  text: BodyJson["pais"],
 			  icon: 'question',
 			  showCancelButton: true,
 			  confirmButtonColor: '#3085d6',
@@ -1294,7 +1294,7 @@ export class ManagerComponent implements OnInit {
 			if(Value == "si") {
 				
 				// Llamar AL Servicio 
-				this.proyecto2Service.DeletePais(BodyJson["Id"]).subscribe(				
+				this.proyecto2Service.DeletePais(BodyJson["id"]).subscribe(				
 				
 					// Resultado 
 					Result => {
@@ -1351,7 +1351,7 @@ export class ManagerComponent implements OnInit {
 			
 			let Frontera;
 		
-			if(BodyJson["Frontera"] == null) 
+			if(BodyJson["frontera"] == null) 
 			{
 
 				Frontera = "-";
@@ -1360,14 +1360,14 @@ export class ManagerComponent implements OnInit {
 			else 
 			{
 				
-				Frontera = BodyJson["Frontera"];
+				Frontera = BodyJson["frontera"];
 				
 			}
 			
 			// Cambiar Region 			 
 			const Value = await Swal.fire({
 			  title: 'Esta Seguro Que Desea Eliminar La Frontera?',
-			  text: BodyJson["Pais"] + " Tiene Una Frontera Con " + Frontera,
+			  text: BodyJson["pais"] + " Tiene Una Frontera Con " + Frontera,
 			  icon: 'question',
 			  showCancelButton: true,
 			  confirmButtonColor: '#3085d6',
@@ -1385,7 +1385,7 @@ export class ManagerComponent implements OnInit {
 			if(Value == "si") {
 				
 				// Llamar AL Servicio 
-				this.proyecto2Service.DeleteFrontera(BodyJson["Id"]).subscribe(				
+				this.proyecto2Service.DeleteFrontera(BodyJson["id"]).subscribe(				
 				
 					// Resultado 
 					Result => {
@@ -1443,7 +1443,7 @@ export class ManagerComponent implements OnInit {
 			// Cambiar Region 			 
 			const Value = await Swal.fire({
 			  title: 'Esta Seguro Que Desea Eliminar La Pregunta?',
-			  text: BodyJson["Pregunta"],
+			  text: BodyJson["pregunta"],
 			  icon: 'question',
 			  showCancelButton: true,
 			  confirmButtonColor: '#3085d6',
@@ -1461,7 +1461,7 @@ export class ManagerComponent implements OnInit {
 			if(Value == "si") {
 				
 				// Llamar AL Servicio 
-				this.proyecto2Service.DeletePregunta(BodyJson["Id"]).subscribe(				
+				this.proyecto2Service.DeletePregunta(BodyJson["id"]).subscribe(				
 				
 					// Resultado 
 					Result => {

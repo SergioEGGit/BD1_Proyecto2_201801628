@@ -78,7 +78,7 @@ export class MaintenanceComponent implements OnInit {
 				
 				for(let i = 0; i < Object.keys(Result).length; i++) {
 					
-					this.ArrayInventores.push(Result[i]["Nombre_IV"]);					
+					this.ArrayInventores.push(Result[i]["nombre_iv"]);					
 					
 				}
 				
@@ -105,7 +105,7 @@ export class MaintenanceComponent implements OnInit {
 		
 			let ArrayInvento;
 			
-			await this.proyecto2Service.getOneInvento(BodyJson["Invento"]).subscribe(
+			await this.proyecto2Service.getOneInvento(BodyJson["invento"]).subscribe(
 			
 				Result => {
 					
@@ -126,7 +126,7 @@ export class MaintenanceComponent implements OnInit {
 			// Cambiar Region 			 
 			const Value = await Swal.fire({
 			  title: 'Desea Cambiar El Inventor?',
-			  text: BodyJson["Inventor"],
+			  text: BodyJson["inventor"],
 			  icon: 'question',
 			  showCancelButton: true,
 			  confirmButtonColor: '#3085d6',
@@ -149,7 +149,7 @@ export class MaintenanceComponent implements OnInit {
 				Inventor_1 = await Swal.fire({
 					title: 'Seleccione Una Inventor',
 					input: 'select',
-					inputValue: BodyJson["Inventor"],
+					inputValue: BodyJson["inventor"],
 					inputOptions: {
 						'Inventores': this.ArrayInventores
 					},				
@@ -164,7 +164,7 @@ export class MaintenanceComponent implements OnInit {
 				for(var Key in this.ArrayInventores) {
 					
 					// Verificar 
-					if(this.ArrayInventores[Key] == BodyJson["Inventor"]) {
+					if(this.ArrayInventores[Key] == BodyJson["inventor"]) {
 						
 						Inventor_1 = { value: Key };
 						
@@ -186,12 +186,12 @@ export class MaintenanceComponent implements OnInit {
 						  {
 							title: 'Invento',
 							text: 'Ingrese Un Nombre',
-							inputValue: (ArrayInvento[0])["Nombre_IN"]							
+							inputValue: (ArrayInvento[0])["nombre_in"]							
 						  },
 						  {
 							title: 'Año',
 							text: 'Ingrese El Año De Invención',
-							inputValue: (ArrayInvento[0])["Anio_IN"]
+							inputValue: (ArrayInvento[0])["anio_in"]
 						  }
 						]).then((result) => {
 							
@@ -211,7 +211,7 @@ export class MaintenanceComponent implements OnInit {
 					
 					let BodyJson_1 = {
 						
-						Id_PA_IN: (ArrayInvento[0])["Id_PA_IN"],
+						Id_PA_IN: (ArrayInvento[0])["id_pa_in"],
 						Nombre_IN: (this.ArrayAgregar["value"])[0],
 						Anio_IN: (this.ArrayAgregar["value"])[1]
 						
@@ -219,19 +219,19 @@ export class MaintenanceComponent implements OnInit {
 				
 					let BodyJson_2 = {
 						
-						Id_IN_IT: (ArrayInvento[0])["Id_IN"],
-						Id_IV_IT: (Result[0])["Id"]
+						Id_IN_IT: (ArrayInvento[0])["id_in"],
+						Id_IV_IT: (Result[0])["id"]
 						
 					}
 				
 					// Agregar Cambio A Invento 
-					this.proyecto2Service.PutInvento((ArrayInvento[0])["Id_IN"], BodyJson_1).subscribe(
+					this.proyecto2Service.PutInvento((ArrayInvento[0])["id_in"], BodyJson_1).subscribe(
 							
 						Result => {
 							
 							if(Result) {								
 								
-								this.proyecto2Service.PutInventado(BodyJson["Id"], BodyJson_2).subscribe(
+								this.proyecto2Service.PutInventado(BodyJson["id"], BodyJson_2).subscribe(
 								
 									Result => {
 										
@@ -314,13 +314,13 @@ export class MaintenanceComponent implements OnInit {
 		
 			let ArrayRespuestas = [];
 			
-			await this.proyecto2Service.getRespuestas(BodyJson["Pregunta"]).subscribe(
+			await this.proyecto2Service.getRespuestas(BodyJson["pregunta"]).subscribe(
 			
 				Result => {
 					
 					for(let i = 0; i < Object.keys(Result).length; i++) {
 					
-						ArrayRespuestas.push(Result[i]["Respuesta"]);					
+						ArrayRespuestas.push(Result[i]["respuesta"]);					
 					
 					}
 								
@@ -339,7 +339,7 @@ export class MaintenanceComponent implements OnInit {
 			// Cambiar Region 			 
 			const Value = await Swal.fire({
 			  title: 'Desea Cambiar La Respuesta Correcta?',
-			  text: BodyJson["Respuesta"],
+			  text: BodyJson["respuesta"],
 			  icon: 'question',
 			  showCancelButton: true,
 			  confirmButtonColor: '#3085d6',
@@ -362,7 +362,7 @@ export class MaintenanceComponent implements OnInit {
 				Respuesta = await Swal.fire({
 					title: 'Seleccione Una Respuesta',
 					input: 'select',
-					inputValue: BodyJson["Respuesta"],
+					inputValue: BodyJson["respuesta"],
 					inputOptions: {
 						'Respuestas': ArrayRespuestas
 					},				
@@ -374,7 +374,7 @@ export class MaintenanceComponent implements OnInit {
 			else 
 			{
 				
-				Respuesta = { value: BodyJson["Respuesta"] };
+				Respuesta = { value: BodyJson["respuesta"] };
 				
 			}	
 			
@@ -393,19 +393,19 @@ export class MaintenanceComponent implements OnInit {
 				
 			}
 			
-			await this.proyecto2Service.getIdRespuesta(BodyJson["Id_Pregunta"], BuscarRespuesta).subscribe(
+			await this.proyecto2Service.getIdRespuesta(BodyJson["id_pregunta"], BuscarRespuesta).subscribe(
 			
 			
 				Result => {
 					
 					let BodyJson_1 = {
 						
-						Id_RS_RC: (Result[0])["Id"],
-						Id_PG_RC: BodyJson["Id_Pregunta"]					
+						Id_RS_RC: (Result[0])["id"],
+						Id_PG_RC: BodyJson["id_pregunta"]					
 						
 					}					
 					
-					this.proyecto2Service.PutRespuestaCorrecta(BodyJson["Id"], BodyJson_1).subscribe(
+					this.proyecto2Service.PutRespuestaCorrecta(BodyJson["id"], BodyJson_1).subscribe(
 					
 						Result => {
 							
