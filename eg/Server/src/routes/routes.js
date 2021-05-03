@@ -24,7 +24,7 @@ const router = app => {
 					"order by numero_inventos desc;";
 		
 		// peticion de query 
-		poolconnection.query({multipleStatements: true, sql: query}, (error, resultado) => {
+		poolconnection.query(query, (error, resultado) => {
 			
 			// verificar si hay error 
 			if(error) {
@@ -37,7 +37,7 @@ const router = app => {
 			{
 				
 				// enviar resultado
-				response.send(resultado);
+				response.send(resultado[1]);
 				
 			}
 			
@@ -49,7 +49,7 @@ const router = app => {
 	app.get("/proyecto2/consulta2", (request, response) => {
 		
 		// query 
-		let query = "select (select nombre_re from region where id_re = sub1.continente) as continente, sub1.pais, sub1.numero_de_preguntas from ( " +
+		let query = "set sql_mode = (SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY,','')); select (select nombre_re from region where id_re = sub1.continente) as continente, sub1.pais, sub1.numero_de_preguntas from ( " +
 					" " +
 					"	select if(isnull(region.id_re_re) = 1, region.id_re, region.id_re_re) as continente, nombre_pa as pais, count(id_rs_dpr) as numero_de_preguntas from pais " +
 					"	left join region on id_re = id_re_pa " +
@@ -73,7 +73,7 @@ const router = app => {
 			{
 				
 				// enviar resultado
-				response.send(resultado);
+				response.send(resultado[1]);
 				
 			}
 			
@@ -85,7 +85,7 @@ const router = app => {
 	app.get("/proyecto2/consulta3", (request, response) => {
 		
 		// query 
-		let query = "select nombre_pa as pais, area_pa as area from pais " +
+		let query = "set sql_mode = (SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY,','')); select nombre_pa as pais, area_pa as area from pais " +
 					"left join inventor on id_pa_iv = id_pa " +
 					"left join frontera on id_pa_1_fr = id_pa " +
 					"where isnull(id_iv) = 1 and isnull(id_pa_2_fr) = 1 and nombre_pa != \"nueva zelandia\" " +
@@ -106,7 +106,7 @@ const router = app => {
 			{
 				
 				// enviar resultado
-				response.send(resultado);
+				response.send(resultado[1]);
 				
 			}
 			
