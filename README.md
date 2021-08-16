@@ -9,3 +9,9 @@ Crud And Maintenance To A Database SEG: This system allows managing a database t
 it allows users to register and log-in.
 
 The server is located in the Server folder, for this reason the deploy carried out only shows the template without a database connected.
+
+Crendenciales Of The Administrator User
+
+| User  | Empresa | Departamento | Pass  |
+|-------|---------|--------------|-------|
+| admin | -       | -            | admin |
