@@ -12,6 +12,6 @@ The server is located in the Server folder, for this reason the deploy carried o
 
 Crendenciales Of The Administrator User
 
-| User  | Empresa | Departamento | Pass  |
-|-------|---------|--------------|-------|
-| admin | -       | -            | admin |
+| User  | Pass  |
+|-------|-------|
+| admin | admin |
